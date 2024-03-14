@@ -1,0 +1,5 @@
+{
+  "name": "runtime",
+  "integrations": {},
+  "type": "react-vite"
+}

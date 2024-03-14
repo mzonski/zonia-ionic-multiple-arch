@@ -1,0 +1,19 @@
+{
+  "name": "zonia-ionic-multiple-arch-root",
+  "version": "0.0.1",
+  "description": "ZONIA Ionic showcase",
+  "private": true,
+  "repository": "https://github.com/mzonski/zonia-frontend.git",
+  "author": "Maciej Zonski <me@zonni.pl>",
+  "license": "MIT",
+  "workspaces": [
+    "configs/*",
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.22.19",
+    "node": ">= v18.18.2"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "zonia-config-prettier",
+  "version": "1.0.0",
+  "description": "Prettier config",
+  "main": "index.cjs",
+  "license": "MIT",
+  "private": true,
+  "peerDependencies": {
+    "prettier": "^3.0.1"
+  }
+}

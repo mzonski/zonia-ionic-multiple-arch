@@ -1,0 +1,32 @@
+$levels: 0, 1, 2, 3, 4;
+
+@function spacing-scale($level) {
+  @return pow(2, $level) * 1em; // Calculate power of 2 and convert to em
+}
+
+// Padding
+@each $level in $levels {
+  .p-#{$level} { padding: spacing-scale($level); }
+  .pt-#{$level} { padding-top: spacing-scale($level); }
+  .pb-#{$level} { padding-bottom: spacing-scale($level); }
+  .pl-#{$level} { padding-left: spacing-scale($level); }
+  .pr-#{$level} { padding-right: spacing-scale($level); }
+  .px-#{$level} { padding-left: spacing-scale($level); padding-right: spacing-scale($level); }
+  .py-#{$level} { padding-top: spacing-scale($level); padding-bottom: spacing-scale($level); }
+}
+
+// Margin
+@each $level in $levels {
+  .m-#{$level} { margin: spacing-scale($level); }
+  .mt-#{$level} { margin-top: spacing-scale($level); }
+  .mb-#{$level} { margin-bottom: spacing-scale($level); }
+  .ml-#{$level} { margin-left: spacing-scale($level); }
+  .mr-#{$level} { margin-right: spacing-scale($level); }
+  .mx-#{$level} { margin-left: spacing-scale($level); margin-right: spacing-scale($level); }
+  .my-#{$level} { margin-top: spacing-scale($level); margin-bottom: spacing-scale($level); }
+}
+
+// Gap
+@each $level in $levels {
+  .g-#{$level} { gap: spacing-scale($level); }
+}
