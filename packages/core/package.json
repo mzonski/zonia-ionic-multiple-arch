@@ -1,0 +1,25 @@
+{
+  "name": "@zonia/core",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "index.ts",
+  "files": [
+    "hooks",
+    "utils",
+    "index.ts"
+  ],
+  "dependencies": {
+    "@total-typescript/ts-reset": "^0.5.1",
+    "clsx": "^2.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@ionic/react": "^7.8.0",
+    "@ionic/core": "^7.8.0",
+    "@types/react": "18.0.11",
+    "@types/react-dom": "18.0.11",
+    "typescript": "4.5.5"
+  },
+  "devDependencies": {
+    "eslint-plugin-zonia": "*"
+  }
+}

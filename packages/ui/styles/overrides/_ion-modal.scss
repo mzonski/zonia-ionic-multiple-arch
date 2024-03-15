@@ -1,0 +1,91 @@
+@mixin override-ionic-modal-styles() {
+  // Define your color scheme
+  $modal-background: rgb(111, 26, 197);
+  $header-background: rgb(227, 227, 227);
+  $input-background: rgb(254, 253, 255);
+  $button-background: rgb(250, 250, 250);
+  $text-color: #000;
+  $backdrop-opacity: 0.4;
+  $backdrop-color: rgba(0, 0, 0, $backdrop-opacity);
+
+  // Border and shadow
+  $border-color: #000;
+  $border-radius: 15px;
+  $input-border-radius: 4px;
+  $button-border-radius: 8px;
+
+  // Spacing
+  $header-padding: 16px;
+  $content-padding: 20px;
+  $input-margin-top: 10px;
+  $input-padding: 13px 20px;
+  $button-margin-top: 20px;
+  $button-padding: 16px 32px;
+
+  // Typography
+  $header-font-size: 1.2em;
+  $button-font-size: 1em;
+  $font-weight-bold: bold;
+
+  // Base modal overlay customization
+  ion-modal {
+    // Custom backdrop styles
+    ion-backdrop {
+      opacity: $backdrop-opacity;
+      background: $backdrop-color;
+    }
+
+    // Custom modal wrapper styles
+    .modal-wrapper {
+      background-color: $modal-background;
+      border-radius: $border-radius;
+
+      // Modal header customization
+      .modal-header {
+        background-color: $header-background;
+        color: $text-color;
+        padding: $header-padding;
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+        font-size: $header-font-size;
+        font-weight: $font-weight-bold;
+      }
+
+      // Modal content customization
+      .modal-content {
+        padding: $content-padding;
+      }
+
+      // Input customization
+      ion-input {
+        --padding-start: 0;
+        --padding-end: 0;
+        --padding-top: 0;
+        --padding-bottom: 0;
+
+        input {
+          margin-top: $input-margin-top;
+          padding: $input-padding;
+          background-color: $input-background;
+          border: 1px solid $border-color;
+          border-radius: $input-border-radius;
+        }
+      }
+
+      // Button customization
+      ion-button {
+        margin-top: $button-margin-top;
+        background-color: $button-background;
+        color: $text-color;
+        border-radius: $button-border-radius;
+        padding: $button-padding;
+        font-size: $button-font-size;
+        font-weight: $font-weight-bold;
+        --ripple-color: transparent;
+      }
+    }
+  }
+}
+
+// Usage:
+// @include override-ionic-modal-styles();

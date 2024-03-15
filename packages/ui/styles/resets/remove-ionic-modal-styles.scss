@@ -1,0 +1,38 @@
+@import "../overrides/ion-modal";
+
+@mixin remove-ionic-modal-styles {
+  // // Targeting the modal wrapper and content
+  // .modal-wrapper,
+  // .modal-content,
+  // [part="content"] {
+  //   padding: 0 !important;
+  //   margin: 0 !important;
+  //   background: none !important;
+  //   box-shadow: none !important;
+  //   border: none !important;
+  // }
+
+  // // Resetting any specific padding/margin for slots
+  // ::slotted(*) {
+  //   padding: 0 !important;
+  //   margin: 0 !important;
+  // }
+  //
+  // // Removing backdrop styles
+  // ion-backdrop,
+  // [part="backdrop"] {
+  //   background: transparent !important;
+  //   opacity: 0 !important;
+  // }
+
+//   // Removing or resetting other modal elements if needed
+//   .modal-shadow,
+//   .modal-handle,
+//   [part="handle"] {
+//     display: none !important;
+//   }
+// }
+
+.reset-ion-modal {
+  @include override-ionic-modal-styles;
+}

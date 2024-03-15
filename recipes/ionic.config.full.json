@@ -1,0 +1,68 @@
+{
+  "name": "your-app-name",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom",
+  "hooks": {
+    "build:before": "npm run custom-build-hook",
+    "serve:before": "npm run custom-serve-hook"
+  },
+  "customWebpackConfig": {
+    "path": "./webpack.config.js"
+  },
+  "server": {
+    "url": "http://localhost:8100",
+    "cleartext": true
+  },
+  "liveReload": {
+    "enabled": true,
+    "plugins": [
+      {
+        "name": "@ionic/vite-plugin",
+        "options": {
+          "livereload": {
+            "port": 35729
+          }
+        }
+      }
+    ]
+  },
+  "npmClient": "npm",
+  "vite": {
+    "plugins": [
+      "vite-plugin-ionic"
+    ],
+    "server": {
+      "port": 3000,
+      "strictPort": true,
+      "proxy": {
+        "/api": {
+          "target": "http://api.example.com",
+          "changeOrigin": true,
+          "rewrite": "path => path.replace(/^\\/api/, '')"
+        }
+      }
+    },
+    "build": {
+      "outDir": "www",
+      "sourcemap": true,
+      "minify": "esbuild",
+      "rollupOptions": {
+        "input": {
+          "main": "path/to/your/index.html"
+        }
+      }
+    },
+    "optimizeDeps": {
+      "include": ["some-external-library"],
+      "exclude": ["another-library-to-exclude"]
+    },
+    "resolve": {
+      "alias": {
+        "@components": "/src/components",
+        "@utils": "/src/utils"
+      }
+    }
+  }
+}

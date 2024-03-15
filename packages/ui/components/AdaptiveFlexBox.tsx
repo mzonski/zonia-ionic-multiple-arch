@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import clsx from 'clsx';
-import styles from './AdaptiveFlexBox.module.scss';
+
 import PropTypes from "prop-types";
 
 type Level = 0 | 1 | 2 | 3 | 4;
@@ -13,6 +13,7 @@ interface AdaptiveFlexBoxProps {
   gap?: Level;
   justify?: 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly';
   wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
+  fill?: boolean;
 }
 
 const AdaptiveFlexBox = ({
@@ -24,18 +25,19 @@ const AdaptiveFlexBox = ({
                            gap = 0,
                            justify = 'start',
                            wrap = 'nowrap',
+                           fill
                          }: PropsWithChildren<AdaptiveFlexBoxProps>) => {
   return (
     <div
       className={clsx(
-        styles.wrapper,
-        styles[`flex-${direction}`],
-        styles[`align-${align}`],
-        styles[`justify-${justify}`],
-        styles[`flex-${wrap}`],
-        styles[`p-${padding}`],
-        styles[`m-${margin}`],
-        styles[`g-${gap}`],
+        ['adaptive-flex-box'],
+        [`flex-${direction}`],
+        [`flex-align-${align}`],
+        [`flex-justify-${justify}`],
+        [`flex-${wrap}`],
+        [`p-${padding}`],
+        [`m-${margin}`],
+        [`g-${gap}`],
       )}
     >
       {children}

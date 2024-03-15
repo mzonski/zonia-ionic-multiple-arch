@@ -72,7 +72,7 @@ $align-content-map: (
 
 
 @each $content-key, $content-value in $align-content-map {
-  .align-content-#{$content-key} {
+  .flex-align-content-#{$content-key} {
     align-content: $content-value;
   }
 }

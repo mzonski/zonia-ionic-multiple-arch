@@ -1,0 +1,8 @@
+{
+  "include": [
+    "./index.ts",
+    "./definitions",
+    "./hooks",
+  ],
+  "extends": "./tsconfig.react.base.json"
+}

@@ -1,0 +1,39 @@
+@use 'sass:math';
+@use 'sass:list';
+@use '../themes/default-theme' as default-theme;
+
+$default-browser-font-size: 16;
+
+@function value-to-rem($value) {
+  $unit: math.unit($value);
+
+  @if $value == 0 {
+    @return 0;
+  } @else if $unit == 'px' {
+    @return math.div($value, $default-browser-font-size * 1px) * 1rem;
+  } @else if $unit == 'rem' {
+    @return $value;
+  } @else {
+    @error 'Value must be in px, or rem.';
+  }
+}
+
+@function value-to-em($value) {
+  $unit: math.unit($value);
+
+  @if $value == 0 {
+    @return 0;
+  } @else if $unit == 'em' {
+    @return $value;
+  } @else if $unit == 'rem' {
+    @return (($value / 1rem * 1em) * math.div(default-theme.$theme-base-font-size / $default-browser-font-size * 1px));
+  } @else if $unit == 'px' {
+    @return math.div($value, $default-browser-font-size * 1px) * 1em;
+  } @else {
+    @error 'Value must be in px, rem, or em.';
+  }
+}
+
+@function negate-value($value) {
+  @return $value * -1
+};

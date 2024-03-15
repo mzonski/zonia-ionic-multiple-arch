@@ -1,13 +1,11 @@
 import federation from "@originjs/vite-plugin-federation";
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
-import viteMakeCerts from "vite-plugin-mkcert";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    viteMakeCerts(),
     federation({
       name: "login",
       filename: 'remoteEntry.js',

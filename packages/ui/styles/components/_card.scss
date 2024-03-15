@@ -1,0 +1,43 @@
+.card-container {
+  background-color: var(--card-background, #121212);
+  color: var(--card-text-color, #ffffff);
+  border: 1px solid var(--card-border-color, #333333);
+  border-radius: 2px;
+  padding: 16px;
+
+  .card-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 16px;
+  }
+
+  .card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  .card-item {
+    font-size: 1em;
+    font-weight: normal;
+    margin-bottom: 8px;
+  }
+
+  .card-link {
+    display: block;
+    color: var(--card-link-color, #aaaaaa);
+    text-decoration: none;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 16px;
+  }
+
+  // Light mode styles
+  @media (prefers-color-scheme: light) {
+    --card-background: #ffffff;
+    --card-text-color: #000000;
+    --card-border-color: #000;
+    --card-link-color: #0000ee;
+  }
+}
