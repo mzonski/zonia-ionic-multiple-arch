@@ -1,55 +1,38 @@
-import { useRemoteModule } from "../hooks/useRemoteModule";
 import { IonSpinner, IonText } from '@ionic/react';
-import AdaptiveFlexBox from "@zonia/ui/components/AdaptiveFlexBox";
-import { FC } from "react";
+import { useRemoteModule } from '../hooks/useRemoteModule';
 
 type RemoteAppProps = Readonly<{
   remoteUrl: string;
   exposedModule: string;
 }>;
 
-const Test: FC<RemoteAppProps> = ({remoteUrl: url, exposedModule}) => {
+function ComponentLoader({ remoteUrl: url, exposedModule }: RemoteAppProps) {
   const [RemoteComponent, isLoading, error] = useRemoteModule({
-    exposedModule: exposedModule,
+    exposedModule,
     remoteUrl: url,
   });
 
   if (isLoading) {
-    return <AdaptiveFlexBox align="center"><IonSpinner/></AdaptiveFlexBox>;
+    return (
+      <div className="loading-card">
+        <IonSpinner />
+      </div>
+    );
   }
 
   if (error) {
-    return <IonText color="danger">Error loading component: {error.message}</IonText>;
+    return (
+      <div className="loading-card">
+        <IonText color="danger">Error loading component: {error.message}</IonText>
+      </div>
+    );
   }
 
   if (RemoteComponent) {
-    console.log("=>(ComponentLoader.tsx:26) RemoteComponen", RemoteComponent);
-    return <>{RemoteComponent}</>;
-  }
-
-  return <div>TEST</div>
-}
-
-const ComponentLoader2 = ({remoteUrl: url, exposedModule}: RemoteAppProps) => {
-  const [RemoteComponent, isLoading, error] = useRemoteModule({
-    exposedModule: exposedModule,
-    remoteUrl: url,
-  });
-
-  if (isLoading) {
-    return <AdaptiveFlexBox align="center"><IonSpinner/></AdaptiveFlexBox>;
-  }
-
-  if (error) {
-    return <IonText color="danger">Error loading component: {error.message}</IonText>;
-  }
-
-  if (RemoteComponent) {
-    console.log("=>(ComponentLoader.tsx:26) RemoteComponen", RemoteComponent);
     return RemoteComponent;
   }
 
   return null;
 }
 
-export default Test;
+export default ComponentLoader;

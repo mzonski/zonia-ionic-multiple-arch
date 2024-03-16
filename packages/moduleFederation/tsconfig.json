@@ -28,10 +28,9 @@
   },
   "include": [
     "components",
-    "typings",
     "errors",
-    "federation",
     "hooks",
+    "typings",
     "index.ts"
   ],
   "exclude": [

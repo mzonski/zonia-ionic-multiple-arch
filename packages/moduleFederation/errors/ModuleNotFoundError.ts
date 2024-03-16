@@ -1,6 +1,8 @@
-export class ModuleNotFoundError extends Error {
+class ModuleNotFoundError extends Error {
   constructor(public moduleName: string) {
     super(`Module "${moduleName}" could not be found.`);
-    this.name = "ModuleNotFoundError";
+    this.name = 'ModuleNotFoundError';
   }
 }
+
+export default ModuleNotFoundError;

@@ -1,6 +1,8 @@
-export class ConfigurationError extends Error {
+class ConfigurationError extends Error {
   constructor(message: string) {
     super(message);
-    this.name = "ConfigurationError";
+    this.name = 'ConfigurationError';
   }
 }
+
+export default ConfigurationError;

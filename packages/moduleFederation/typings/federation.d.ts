@@ -1,4 +1,5 @@
-declare module "virtual:__federation__" {
+/* eslint-disable @typescript-eslint/naming-convention */
+declare module 'virtual:__federation__' {
   import { ComponentType } from 'react';
 
   /**
@@ -9,7 +10,7 @@ declare module "virtual:__federation__" {
   /**
    * Configuration for setting up a remote module, detailing how and from where the module should be loaded.
    */
-  type RemoteConfig = { url: string; format: "esm" | "systemjs" | "var"; from: "vite" | "webpack" };
+  type RemoteConfig = { url: string; format: 'esm' | 'systemjs' | 'var'; from: 'vite' | 'webpack' };
 
   /**
    * Ensures the initialization of a remote module, loading it if not already done.

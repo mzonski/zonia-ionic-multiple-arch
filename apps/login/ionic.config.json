@@ -1,5 +1,6 @@
 {
   "name": "login",
+  "type": "react-vite",
   "integrations": {},
-  "type": "react-vite"
+  "npmClient": "yarn"
 }

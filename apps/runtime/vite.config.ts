@@ -19,6 +19,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@zonia/module-federation': path.join(__dirname, "../../packages/moduleFederation"),
+      '@zonia/ui': path.join(__dirname, "../../packages/ui"),
     }
   },
   build: {
